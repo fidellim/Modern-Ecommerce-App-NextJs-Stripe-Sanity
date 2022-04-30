@@ -30,6 +30,7 @@ export const StateContext = ({ children }) => {
 						...cartProduct,
 						quantity: cartProduct.quantity + quantity,
 					};
+				return cartProduct;
 			});
 
 			setCartItems(updatedCartItems);
@@ -56,24 +57,25 @@ export const StateContext = ({ children }) => {
 		setCartItems(newCartItems);
 	};
 
-	const toggleCartItemQuanitity = (id, value) => {
+	const toggleCartItemQuantity = (id, value) => {
 		foundProduct = cartItems.find((item) => item._id === id);
 		index = cartItems.findIndex((product) => product._id === id);
-		const newCartItems = cartItems.filter((item) => item._id !== id);
 
 		if (value === "inc") {
-			setCartItems([
-				...newCartItems,
-				{ ...foundProduct, quantity: foundProduct.quantity + 1 },
-			]);
+			const updatedCartItems = cartItems.map((item) => {
+				if (item._id === id) item.quantity += 1;
+				return item;
+			});
+			setCartItems(updatedCartItems);
 			setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
 			setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
 		} else if (value === "dec") {
 			if (foundProduct.quantity > 1) {
-				setCartItems([
-					...newCartItems,
-					{ ...foundProduct, quantity: foundProduct.quantity - 1 },
-				]);
+				const updatedCartItems = cartItems.map((item) => {
+					if (item._id === id) item.quantity -= 1;
+					return item;
+				});
+				setCartItems(updatedCartItems);
 				setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
 				setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
 			}
@@ -96,7 +98,7 @@ export const StateContext = ({ children }) => {
 		<Context.Provider
 			value={{
 				showCart,
-				// setShowCart,
+				setShowCart,
 				cartItems,
 				totalPrice,
 				totalQuantities,
@@ -104,11 +106,11 @@ export const StateContext = ({ children }) => {
 				incQty,
 				decQty,
 				onAdd,
-				// toggleCartItemQuanitity,
-				// onRemove,
-				// setCartItems,
-				// setTotalPrice,
-				// setTotalQuantities,
+				toggleCartItemQuantity,
+				onRemove,
+				setCartItems,
+				setTotalPrice,
+				setTotalQuantities,
 			}}
 		>
 			{children}
