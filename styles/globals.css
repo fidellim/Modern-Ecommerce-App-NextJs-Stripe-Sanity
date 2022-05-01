@@ -126,6 +126,7 @@ span.text-red {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   margin-top: 20px;
   width: 100%;
@@ -491,6 +492,7 @@ span.text-red {
 
 .product-detail-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   margin: 40px;
   margin-top: 60px;
@@ -623,12 +625,12 @@ span.text-red {
 .quantity-desc span {
   font-size: 16px;
   padding: 6px 12px;
-  cursor: pointer;
 }
 
 .quantity-desc .minus {
   border-right: 1px solid gray;
   color: #f02d34;
+  cursor: pointer;
 }
 
 .quantity-desc .num {
@@ -638,7 +640,7 @@ span.text-red {
 
 .quantity-desc .plus {
   color: rgb(49, 168, 49);
-
+  cursor: pointer;
 }
 
 .maylike-products-wrapper {
@@ -674,7 +676,8 @@ span.text-red {
 
 .success,
 .cancel {
-  width: 1000px;
+  max-width: 1000px;
+  width: 100%;
   margin: auto;
   margin-top: 160px;
   background-color: #dcdcdc;
@@ -799,17 +802,15 @@ span.text-red {
     bottom: 60px;
   }
 
-  .product-detail-container {
-    flex-wrap: wrap;
-  }
-
   .product-detail-container .product-detail-image {
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    width: 100%;
+    height: auto;
   }
 
   .cart-container {
-    width: 415px;
+    max-width: 415px;
+    width: 100%;
     padding: 4px;
   }
 
@@ -889,12 +890,14 @@ span.text-red {
 
   .success,
   .cancel {
-    width: 370px;
+    max-width: 370px;
+    width: 100%;
     margin-top: 100px;
     padding: 20px;
   }
 
   .success {
+    /* width: 100%; */
     height: 350px;
   }
 
