@@ -22,7 +22,6 @@ a {
   max-width: 1400px;
   margin: 4rem auto 0 auto;
   width: 100%;
-
 }
 
 .layout {
@@ -207,8 +206,10 @@ span.text-red {
   position: absolute;
   top: 0%;
   right: 20%;
-  width: 450px;
-  height: 450px;
+  max-width: 450px;
+  width: 100%;
+  /* height: 450px; */
+  height: auto;
 }
 
 
@@ -737,9 +738,9 @@ span.text-red {
 
   .hero-banner-image {
     width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    height: auto;
+    top: 0%;
+    right: 0%;
   }
 
   .footer-banner-container {
@@ -749,9 +750,9 @@ span.text-red {
 
   .footer-banner-image {
     width: 77%;
-    left: 30%;
+    height: auto;
+    right: 0%;
     top: 6%;
-    height: 56%
   }
 
   .banner-desc .left h3 {
@@ -909,4 +910,24 @@ span.text-red {
     width: 300px;
     margin: auto;
   }
+}
+
+@media screen and (max-width:450px) {
+
+  .hero-banner-image {
+    width: 60%;
+    height: auto;
+    top: 0%;
+    right: 0%;
+    transform: translate(0%, 85%);
+  }
+
+  .footer-banner-image {
+    width: 60%;
+    height: auto;
+    right: 0%;
+    top: 6%;
+    transform: translate(25%,25%);
+  }
+
 }
