@@ -9,12 +9,13 @@ A modern full-stack ecommerce NextJs application using Stripe and Sanity
 
 ## Screenshot
 
-<!-- ![Landing Page](/images/landing_page.png) -->
+![Desktop](/images/Desktop-Solution.png)
+![Mobile](/images/Mobile-Solution.png)
 
 ## Links
 
-<!-- - Solution URL: [Solution](https://github.com/fidellim/Business-Landing-Page-NextJs)
-- Live Site URL: [Live Site](https://business-landing-page-next-fidellim.vercel.app/) -->
+- Solution URL: [Solution](https://github.com/fidellim/Modern-Ecommerce-App-NextJs-Stripe-Sanity)
+- Live Site URL: [Live Site](https://modern-ecommerce-app-next-js-stripe-sanity.vercel.app/)
 
 ## References
 
